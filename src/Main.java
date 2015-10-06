@@ -1,10 +1,17 @@
 public class Main {
 
     public static void main(String[] args) {
-        HistogramBuilder histogramBuilder = new HistogramBuilder(new int[] {1,4,7,1,1,8,4,1,4,9});
+        HistogramBuilder histogramBuilder = new HistogramBuilder(new Integer[] {1,4,7,1,1,8,4,1,4,9});
         Histogram histogram = histogramBuilder.build();
-        histogram.printHistogram();
-        System.out.println(histogram.get(3));
+        HistogramViewer histogramViewer = new HistogramViewer(histogram);
+        histogramViewer.view();
+
+        HistogramBuilder histogramBuilder1 = new HistogramBuilder(new String[] {"Hola", "Hola", "eo", "eoeoe", "ao", "eo"});
+        Histogram histogram1 = histogramBuilder1.build();
+        HistogramViewer histogramViewer1 = new HistogramViewer(histogram1);
+        histogramViewer1.view();
+
+
     }
 
 }
