@@ -15,4 +15,8 @@ public class Histogram {
     public Object getMap() {
         return mapa;
     }
+
+    public void incrementar(Object key){
+        mapa.put(key, mapa.containsKey(key) ? mapa.get(key) + 1 : 1);
+    }
 }

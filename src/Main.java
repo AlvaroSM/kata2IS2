@@ -9,6 +9,7 @@ public class Main {
         HistogramBuilder histogramBuilder1 = new HistogramBuilder(new String[] {"Hola", "Hola", "eo", "eoeoe", "ao", "eo"});
         Histogram histogram1 = histogramBuilder1.build();
         HistogramViewer histogramViewer1 = new HistogramViewer(histogram1);
+        histogram.incrementar("Hola");
         histogramViewer1.view();
 
 

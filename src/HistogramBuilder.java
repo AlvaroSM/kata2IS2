@@ -1,12 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class HistogramBuilder <T> {
+public class HistogramBuilder {
 
-    private final Object[] enteros;
+    private final Object[] keys;
 
     public HistogramBuilder(Object[] objects) {
-        this.enteros = objects;
+        this.keys = objects;
     }
 
     public Histogram build() {
@@ -16,9 +16,7 @@ public class HistogramBuilder <T> {
     }
 
     private void rellenarMapa(Map<Object, Integer> mapa) {
-        for (Object entero : enteros) {
-            if (mapa.containsKey(entero)) mapa.put(entero, mapa.get(entero)+1);
-            else mapa.put(entero, 1);
-        }
+        for (Object key : keys)
+            mapa.put(key, mapa.containsKey(key) ? mapa.get(key) + 1 : 1);
     }
 }
